@@ -62,6 +62,24 @@
             line-height: 90vh;
             font-size: 40vh;
         }
+        /* https://3dtransforms.desandro.com/card-flip */
+        .cards div.selected.back {
+            transform: rotateY(180deg);
+            transition: transform 0.2s;
+        }
+
+        .selected:after {
+            content: '';
+            display: block;
+            background: #03A9F4;
+            width: 100%;
+            height: 100%;
+            transform: rotateY(180deg);
+        }
+
+        .cards div.selected + div {
+            display: none;
+        }
 
         footer {
             color: rgba(255,255,255,0.5);
@@ -104,7 +122,17 @@
     <script>
         document.querySelectorAll('.cards div').forEach(div => {
             div.addEventListener('click', () => {
-                div.classList.toggle('selected');
+                const cls = div.classList;
+                if (cls.contains('selected')) {
+                    if (cls.contains('back')) {
+                        cls.remove('back');
+                        cls.add('front');
+                    } else {
+                        cls.remove('selected', 'front');
+                    }
+                } else {
+                    cls.add('selected', 'back');
+                }
             });
         });
     </script>
