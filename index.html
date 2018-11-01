@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Scrum Poker (lite)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Verdana;
+            margin: 0;
+            background: #678;
+        }
+
+        h1 {
+            font-weight: normal;
+            font-size: 10vh;
+            text-align: center;
+            color: #818181;
+            margin: 0.7em 0 0 0;
+            display: none;
+        }
+
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: space-evenly;
+            justify-content: center;
+            /* padding: 4vh 4vw; */
+            padding: 5vh 0;
+            font-size: 0;
+        }
+
+        .cards div {
+            width: 25vw;
+            /* height: 18vh; */
+            line-height: 18vh;
+            border: 2px solid white;
+            background: #03A9F4;
+            margin: 2vh 6vw;
+            border-radius: 0.3em;
+            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 7px rgba(0, 0, 0, 0.4);
+            color: white;
+            font-size: 7vh;
+            font-family: Verdana;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 1), 0 0 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .cards div.selected {
+            position: absolute;
+            left: 5vw;
+            right: 5vw;
+            top: 5vh;
+            bottom: 5vh;
+            width: auto;
+            height: auto;
+            line-height: 90vh;
+            font-size: 40vh;
+        }
+
+        footer {
+            color: rgba(255,255,255,0.5);
+            text-align: right;
+            font-size: 9pt;
+            display: inline-block;
+            position: absolute;
+            right: 1em;
+            bottom: 1em;
+        }
+
+        @media screen and (orientation:landscape) {
+            .cards {
+                padding: 8vh 0;
+            }
+            .cards div {
+                font-size: 7vw;
+                width: 14vw;
+                height: 35vh;
+                line-height: 35vh;
+                margin: 3vh 3vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Scrum Poker</h1>
+    <div class="cards">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>5</div>
+        <div>8</div>
+        <div>13</div>
+        <div>20</div>
+        <div>?</div>
+    </div>
+    <footer>Made with &#x2764; by Flexibits</footer>
+    <script>
+        document.querySelectorAll('.cards div').forEach(div => {
+            div.addEventListener('click', () => {
+                div.classList.toggle('selected');
+            });
+        });
+    </script>
+</body>
+
+</html>
