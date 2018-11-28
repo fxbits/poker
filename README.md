@@ -1,9 +1,4 @@
 # poker
-Simple and lightweight Planning Poker
-
-TODO:
-* fullscreen support
-* add to home page
-* offline support
+Simple and *lightweight* (<5Kb) Planning Poker
 
 Made with ❤ by Flexibits
