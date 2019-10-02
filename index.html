@@ -11,7 +11,12 @@
         body {
             font-family: Verdana;
             margin: 0;
-            background: #678;
+            background: floralwhite;
+        }
+
+        a, a:visited {
+          text-decoration: none;
+          color: #0E4BD8;
         }
 
         .cards {
@@ -59,10 +64,8 @@
             right: 0;
             top: 0;
             bottom: 0;
-            border: 2px solid white;
-            background: rgb(36,195,239);
+            background: #0E4BD8;
             border-radius: 0.3em;
-            box-shadow: 0px 0px 0.03em rgba(0, 0, 0, 0.7), 0px 0px 0.1em rgba(0, 0, 0, 0.4);
             color: white;
             font-family: Verdana;
             font-weight: bold;
@@ -72,22 +75,26 @@
 
         .card .back {
             transform: rotateY(180deg);
-            background-image: url(fxbits.svg);
+            background-image: url(logo-white.svg);
             background-repeat: no-repeat;
-            background-color: #24c3ef;
+            background-color: #0E4BD8;
             background-position: center center;
             background-size: 75%;
         }
 
         footer {
-            color: rgba(255,255,255,0.5);
+            color: #888;
             text-align: right;
             font-size: 8pt;
             display: inline-block;
             position: absolute;
             right: 2vw;
             bottom: 1vh;
-            z-index: -1;
+            z-index: 1;
+        }
+
+        .love {
+          color: red;
         }
 
         @media screen and (orientation:landscape) {
@@ -114,7 +121,7 @@
         <div class="card"><div class="front">20</div><div class="back"></div></div>
         <div class="card"><div class="front">?</div><div class="back"></div></div>
     </div>
-    <footer>Made with &#x2764; by Flexibits</footer>
+    <footer>Made with <span class="love">&#x2764;</span> by <a href="https://fxbits.io/">fxBITS</a></footer>
     <script>
         const container = document.querySelector('.cards');
         document.querySelectorAll('.card').forEach(div => {
